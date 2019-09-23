@@ -15,7 +15,10 @@ class Homepage extends Component {
         return(
             <div>
             <h1>Homepage</h1>
-            <Carousel/>
+            <div className="carousel-container">
+
+            <h1 className="pictures"><Carousel/></h1>
+            </div>
             </div>
             
         )
