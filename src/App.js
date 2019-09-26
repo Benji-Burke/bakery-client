@@ -59,8 +59,9 @@ class App extends Component {
                         <Route path="/contact" exact render={props => (
                             <Form/>
                         )}/>
-                        <Footer/>
+                        <div className="test"></div>
                     </body>
+                        <Footer/>
                 </Router>
             </div>
         )

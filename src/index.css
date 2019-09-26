@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
  
 }
 
@@ -27,6 +29,9 @@ code {
 
 }
 
+.test{
+  height: 800px;
+}
 
 .fab,
 .fas 
@@ -39,6 +44,7 @@ code {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .logo{
