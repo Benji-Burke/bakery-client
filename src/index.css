@@ -5,12 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+*{
+  background-color: lightblue;
+}
+
 
 .pictures {
   width: 80%;
@@ -19,3 +26,29 @@ code {
   margin-right: auto;
 
 }
+
+
+.fab,
+.fas 
+{
+  font-size: 100px;
+  text-align: center;
+}
+
+.footer {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+}
+
+.welcome {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
