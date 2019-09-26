@@ -6,6 +6,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 import Carousel from './components/Carousel';
 import logo from './components/migdalias.png';
 import Footer from './components/Footer'
+import Form from './components/Form'
 
 class App extends Component {
     constructor(props) {
@@ -55,7 +56,10 @@ class App extends Component {
                             <Homepage/>
                             
                         )}/>
-                        <Footer />
+                        <Route path="/contact" exact render={props => (
+                            <Form/>
+                        )}/>
+                        <Footer/>
                     </body>
                 </Router>
             </div>
