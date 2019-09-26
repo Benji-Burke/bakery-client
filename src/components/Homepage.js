@@ -19,6 +19,7 @@ class Homepage extends Component {
         foundBio: [],
        
     }
+    this.getAboutMe=this.getAboutMe.bind(this)
     }
 
     componentDidMount(){
@@ -29,10 +30,12 @@ class Homepage extends Component {
         const response = await axios.get(`${baseURL}/about`)
         const data = response.data;
         console.log(response)
-        console.log(data)
+        console.log(data.foundBio[0].body)
         this.setState({
-            foundBio: data,
-            // body: foundBio[0].body
+                foundBio: data,
+                body: data.foundBio[0].body
+
+            
             
         })
     }
