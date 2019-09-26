@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Carousel from './Carousel';
+
 import Instagram from './Instagram';
 import axios from 'axios'
 
@@ -50,6 +51,7 @@ class Homepage extends Component {
 
     render() {
         return(
+
             <div >
             {/* <h1>MigdaliasConfections</h1> */}
             <img src=""/>
@@ -63,6 +65,7 @@ class Homepage extends Component {
             <p>{}</p>
             </div>
             <div><Instagram/></div>
+
             </div>
             </div>
             

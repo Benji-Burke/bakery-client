@@ -13,9 +13,11 @@ code {
     monospace;
 }
 
+
 *{
   background-color: lightblue;
 }
+
 
 .pictures {
   width: 80%;
@@ -24,6 +26,7 @@ code {
   margin-right: auto;
 
 }
+
 
 .fab,
 .fas 
@@ -48,3 +51,4 @@ code {
   margin-left: auto;
   text-align: center;
 }
+
