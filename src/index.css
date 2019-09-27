@@ -12,9 +12,9 @@ code {
     monospace;
 }
 
-/* *{
+* {
   background-color: lightblue;
-} */
+}
 
 .pictures {
   width: 80%;
