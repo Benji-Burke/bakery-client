@@ -17,11 +17,24 @@ class Homepage extends Component {
       foundBio: []
     };
     this.getAboutMe = this.getAboutMe.bind(this);
+    // this.getPictures = this.getPictures.bind(this);
   }
 
   componentDidMount() {
     this.getAboutMe();
+    // this.getPictures();
   }
+
+  // async getPictures() {
+  //   const respond = await axios.get(`${baseURL}`);
+  //   const datas = respond.data;
+  //   // console.log(response);
+  //   console.log(datas.pictures);
+  //   this.setState({
+  //     pictures: datas,
+  //     image: datas.pictures[0].src
+  //   });
+  // }
 
   async getAboutMe() {
     const response = await axios.get(`${baseURL}/about`);
