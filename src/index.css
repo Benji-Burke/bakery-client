@@ -52,5 +52,10 @@ code {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  width: 80%
+  width: 80%;
+  padding-bottom: 40px;
+}
+
+.pics{
+  justify-items: center;
 }
