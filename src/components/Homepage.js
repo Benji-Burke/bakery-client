@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Carousel from './Carousel';
-
+import Drop from './Drop';
 import Instagram from './Instagram';
 import axios from 'axios';
 
@@ -14,14 +14,31 @@ class Homepage extends Component {
     this.state = {
       picturesSlider: [],
       pictures: [],
-      foundBio: []
+      foundBio: [],
+      foundImage: ['test']
     };
     this.getAboutMe = this.getAboutMe.bind(this);
+    this.getImages = this.getImages.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
+    // this.getPictures = this.getPictures.bind(this);
   }
 
   componentDidMount() {
     this.getAboutMe();
+    this.getImages();
+    // this.getPictures();
   }
+
+  // async getPictures() {
+  //   const respond = await axios.get(`${baseURL}`);
+  //   const datas = respond.data;
+  //   // console.log(response);
+  //   console.log(datas.pictures);
+  //   this.setState({
+  //     pictures: datas,
+  //     image: datas.pictures[0].src
+  //   });
+  // }
 
   async getAboutMe() {
     const response = await axios.get(`${baseURL}/about`);
@@ -34,11 +51,29 @@ class Homepage extends Component {
     });
   }
 
+  async getImages() {
+    const response = await axios.get(`${baseURL}`);
+    const data = response.data;
+    console.log('The image link is: ', data.foundImage[0].src);
+    this.setState({
+      foundImage: data.foundImage
+    });
+  }
+
   // getBody(body){
   //     this.setState({
   //         body: body,
   //     })
   // }
+
+  handleDrop = files => {
+    let fileList = this.state.foundImage;
+    for (let i = 0; i < files.length; i++) {
+      if (!files[i].name) return;
+      fileList.push(files[i].name);
+    }
+    this.setState({ files: fileList });
+  };
 
   render() {
     return (
@@ -58,6 +93,13 @@ class Homepage extends Component {
           </div>
           <div>
             <Instagram />
+            <Drop handleDrop={this.handleDrop}>
+              <div style={{ height: 300, width: 250 }}>
+                {this.state.foundImage.map(file => (
+                  <img src={file.src} alt={file} />
+                ))}
+              </div>
+            </Drop>
           </div>
         </div>
       </div>
