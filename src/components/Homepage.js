@@ -15,7 +15,7 @@ class Homepage extends Component {
       picturesSlider: [],
       pictures: [],
       foundBio: [],
-      foundImage: ['test']
+      foundImage: []
     };
     this.getAboutMe = this.getAboutMe.bind(this);
     this.getImages = this.getImages.bind(this);
@@ -28,17 +28,6 @@ class Homepage extends Component {
     this.getImages();
     // this.getPictures();
   }
-
-  // async getPictures() {
-  //   const respond = await axios.get(`${baseURL}`);
-  //   const datas = respond.data;
-  //   // console.log(response);
-  //   console.log(datas.pictures);
-  //   this.setState({
-  //     pictures: datas,
-  //     image: datas.pictures[0].src
-  //   });
-  // }
 
   async getAboutMe() {
     const response = await axios.get(`${baseURL}/about`);
@@ -67,12 +56,12 @@ class Homepage extends Component {
   // }
 
   handleDrop = files => {
-    let fileList = this.state.foundImage;
+    let foundImage = this.state.foundImage;
     for (let i = 0; i < files.length; i++) {
       if (!files[i].name) return;
-      fileList.push(files[i].name);
+      foundImage.push(files[i].name);
     }
-    this.setState({ files: fileList });
+    this.setState({ files: foundImage });
   };
 
   render() {
@@ -95,8 +84,11 @@ class Homepage extends Component {
             <Instagram />
             <Drop handleDrop={this.handleDrop}>
               <div style={{ height: 300, width: 250 }}>
-                {this.state.foundImage.map(file => (
-                  <img src={file.src} alt={file} />
+                {this.state.foundImage.map((file, i) => (
+                  // <li key={i}>{file.src}</li>
+                  <li>
+                    <img src={file.src} />
+                  </li>
                 ))}
               </div>
             </Drop>

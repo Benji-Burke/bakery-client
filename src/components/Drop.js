@@ -13,9 +13,7 @@ class Drop extends Component {
     e.stopPropagation();
     this.dragCounter++;
     if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
-      this.setState({
-        drag: true
-      });
+      this.setState({ drag: true });
     }
   };
   handleDragOut = e => {
@@ -23,9 +21,7 @@ class Drop extends Component {
     e.stopPropagation();
     this.dragCounter--;
     if (this.dragCounter === 0) {
-      this.setState({
-        drag: false
-      });
+      this.setState({ drag: false });
     }
   };
   handleDrop = e => {
@@ -55,13 +51,10 @@ class Drop extends Component {
   render() {
     return (
       <div
-        style={{
-          display: 'inline-block',
-          position: 'relative'
-        }}
+        style={{ display: 'inline-block', position: 'relative' }}
         ref={this.dropRef}
       >
-        {this.state.dragging && (
+        {this.state.drag && (
           <div
             style={{
               border: 'dashed grey 4px',
@@ -85,7 +78,7 @@ class Drop extends Component {
                 fontSize: 36
               }}
             >
-              <div>drop here : </div>
+              <div>drop here :</div>
             </div>
           </div>
         )}
