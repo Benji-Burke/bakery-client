@@ -83,11 +83,13 @@ class Homepage extends Component {
           <div>
             <Instagram />
             <Drop handleDrop={this.handleDrop}>
-              <div style={{ height: 300, width: 250 }}>
+              <div className='images' style={{ height: 300, width: 250 }}>
                 {this.state.foundImage.map((file, i) => (
                   // <li key={i}>{file.src}</li>
                   <li>
+                    <h3>{file.header}</h3>
                     <img className='photos' src={file.src} />
+                    <p>{file.caption}</p>
                   </li>
                 ))}
               </div>
