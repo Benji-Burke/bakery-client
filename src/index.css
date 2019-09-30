@@ -45,3 +45,12 @@ code {
   margin-left: auto;
   text-align: center;
 }
+
+.photos {
+  height: 300px;
+  width: auto;
+}
+
+.images {
+  margin-left: 100px;
+}

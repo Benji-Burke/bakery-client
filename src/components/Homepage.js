@@ -87,7 +87,7 @@ class Homepage extends Component {
                 {this.state.foundImage.map((file, i) => (
                   // <li key={i}>{file.src}</li>
                   <li>
-                    <img src={file.src} />
+                    <img className='photos' src={file.src} />
                   </li>
                 ))}
               </div>
